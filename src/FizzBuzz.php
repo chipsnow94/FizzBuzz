@@ -11,18 +11,18 @@ class FizzBuzz
     public function excecute($number)
     {
         $this->Check_Exception($number);
-        if ($number % self::fizzbuzz ==0) {
-            $result='fizzbuzz';
+        if ($this->Check_FizzBuzz($number)) {
+            $result ='FizzBuzz';
             return $result;
-        }
-        if ($number % self::fizz ==0) {
-            $result='fizz';
+        } ;
+        if ($this->Check_Fizz($number)) {
+            $result ='Fizz';
             return $result;
-        }
-        if ($number %self::buzz ==0) {
-            $result='buzz';
+        } ;
+        if ($this->Check_Buzz($number)) {
+            $result ='Buzz';
             return $result;
-        }
+        } ;
         return $number;
     }
     public function excecuteUpTo($number)
@@ -30,12 +30,11 @@ class FizzBuzz
         $this->Check_Exception($number);
         $ArryNum=[];
         for ($i=1; $i <=$number ; $i++) {
-            # code...
             $ArryNum[]= $this->excecute($i);
         }
         return $ArryNum;
     }
-
+    
     private function Check_Exception($number)
     {
         if (!is_numeric($number)) {
@@ -46,6 +45,24 @@ class FizzBuzz
         if ($number < self::MIN_NUM || $number >self::MAX_NUM) {
             # code...
             throw new InvalidArgumentException('Invalid Number');
+        }
+    }
+    private function Check_FizzBuzz($number)
+    {
+        if ($number % self::fizzbuzz ==0) {
+            return true;
+        }
+    }
+    private function Check_Fizz($number)
+    {
+        if ($number % self::fizz ==0) {
+            return true;
+        }
+    }
+    private function Check_Buzz($number)
+    {
+        if ($number %self::buzz ==0) {
+            return true;
         }
     }
 }

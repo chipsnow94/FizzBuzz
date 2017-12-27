@@ -20,29 +20,29 @@ class FizzBuzzSpec extends ObjectBehavior
     {
         $this->excecute(2)->shouldReturn(2);
     }
-    public function it_return_fizz_when_3()
+    public function it_return_Fizz_when_3()
     {
-        $this->excecute(3)->shouldReturn('fizz');
+        $this->excecute(3)->shouldReturn('Fizz');
     }
-    public function it_return_buzz_when_4()
+    public function it_return_Buzz_when_4()
     {
-        $this->excecute(5)->shouldReturn('buzz');
+        $this->excecute(5)->shouldReturn('Buzz');
     }
-    public function it_return_fizzbuzz_when_15()
+    public function it_return_FizzBuzz_when_15()
     {
-        $this->excecute(15)->shouldReturn('fizzbuzz');
+        $this->excecute(15)->shouldReturn('FizzBuzz');
     }
     
-    public function it_return_fizz_when_123()
+    public function it_return_Fizz_when_123()
     {
         $this->shouldThrow(new \InvalidArgumentException('Invalid Number'))->duringExcecute(123);
     }
-    public function it_return_fizz_when_type_acs()
+    public function it_return_Fizz_when_type_acs()
     {
         $this->shouldThrow(new \InvalidArgumentException('Invalid Input-Must be a number'))->duringExcecute('acs');
     }
     public function it_return_a_sequence()
     {
-        $this->excecuteUpTo(5)->shouldReturn([1,2,'fizz',4,'buzz']);
+        $this->excecuteUpTo(5)->shouldReturn([1,2,'Fizz',4,'Buzz']);
     }
 }
