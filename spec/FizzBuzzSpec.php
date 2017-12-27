@@ -24,7 +24,7 @@ class FizzBuzzSpec extends ObjectBehavior
     {
         $this->excecute(3)->shouldReturn('Fizz');
     }
-    public function it_return_Buzz_when_4()
+    public function it_return_Buzz_when_5()
     {
         $this->excecute(5)->shouldReturn('Buzz');
     }
@@ -33,11 +33,11 @@ class FizzBuzzSpec extends ObjectBehavior
         $this->excecute(15)->shouldReturn('FizzBuzz');
     }
     
-    public function it_return_Fizz_when_123()
+    public function it_return_Invalid_Number_when_123()
     {
         $this->shouldThrow(new \InvalidArgumentException('Invalid Number'))->duringExcecute(123);
     }
-    public function it_return_Fizz_when_type_acs()
+    public function it_return_Invalid_Input_when_type_acs()
     {
         $this->shouldThrow(new \InvalidArgumentException('Invalid Input-Must be a number'))->duringExcecute('acs');
     }
